@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    
+    </head>
+    
+    <body>
+
+
+
+        <nav class="navbar navbar-expand-lg p-3 hnav" id="hnav">
+            <a class="navbar-brand" href="#head" id="log">COVI-AID</a>
+            <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse d-flex-end" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#head" id="ha">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#mission" id="ma">Mission</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#predict" id="pa">Predict</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#abtus" id="ba">About Us</a>
+                </li>
+              </ul>
+          </nav>
+
+
+
+
+
+        <div class="container-fluid pl-0 ml-0 head" id="head">
+            <div class="title">
+                <p>COVI-AID</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container-fluid mission" id="mission">
+                <p><span id="p">Mission</span></p>
+                <div class="row pl-5 content">
+                    <div class="col-lg-5 ml-5 img">
+                        <img src="{{ url_for('static',filename='deeple.png') }}" alt="mission img" class="img-fluid mimg">
+                    </div>
+                    <div class=" col-lg-6 d-flex justify-content-center matter">The Corona Virus Disease also called the COVID-19, is a dangerous virus and declared as a pandemic by 
+                        World Health Organization. It is a highly transmissible viral infection and has a severe impact on global 
+                        health. More than 16 crore people across the world were affected and more than 33 lakh people died because 
+                        of this virus. If the positive cases can be detected early, this pandemic disease spread can be restricted. 
+                        Prediction of COVID-19 disease is advantageous to identify patients at risk of health conditions. Coronavirus 
+                        shows its impact on many areas in the human body but primarily infects the respiratory system. COVID-19 
+                        causes pneumonia that tends to take hold in both the lungs. Pneumonia caused by the coronavirus is more 
+                        serious than the normal pneumonia. This pneumonia can be found using a chest X-ray. Application of 
+                        Artificial Intelligence (AI) techniques for COVID-19 prediction from X-rays can be very useful and can help 
+                        to overcome the shortage of availability of doctors in remote places. Our mission is to propose a system that can be 
+                        used for the automatic identification of the coronavirus from the chest X-ray images. In this method, the 
+                        features of the chest X-ray images are extracted by using the Convolution neural networks(CNN), and then 
+                        the extracted features are classified using the various classifiers. The concept of Transfer Learning can also 
+                        be used for its advantage of decreasing the training time for a neural network model. This system enables us 
+                        to detect the COVID-19 infected patients in a better and more accurate way.
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid predict" id="predict">
+            <p><span>Predict</span></p>
+            <p class="ptext"> Want to test on your own Chest X-Ray image, Click on the predict below..!!</p>
+            <div class="button"><a href=form class="pbutton">Predict</a></div>
+        </div>
+
+        <!--- About us section --->
+
+        <div class="container-fluid aboutus" id="abtus">
+          <p class="ahead"><span>About Us</span></p>
+          <div class="row">
+              <div class=" col-xl-3 col-lg-6 col-md-6 profile text-center">
+                  <div class="container d-flex justify-content-center">
+                    <div class="imgbox" id="ibox1">
+                        <img src="{{ url_for('static',filename='Blogimage.png') }}" class="img-fluid" alt="Praneeth">
+                        <p class="name" id="n1">Praneeth Mulukuri</p>
+                      
+                        <ul>
+                            <a><li><i class="fab fa-facebook" id="sc1a"></i></li></a>
+                            <a><li><i class="fab fa-linkedin" id="sc1b"></i></li></a>
+                            <a><li><i class="fab fa-github" id="sc1c"></i></li></a>
+                            <a><li><i class="fab fa-twitter-square" id="sc1d"></i></li></a>
+                        </ul>
+                        <p class="jntuno" id="j1">18341A0584</p>
+                        <p class="mail" id="m1">18341A0584@gmrit.edu.in</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 profile text-center">
+                  <div class="container d-flex justify-content-center">
+                    <div class="imgbox" id="ibox2">
+                        <img src="{{ url_for('static',filename='Blogimage.png') }}" class="img-fluid" alt="Praneeth">
+                        <p class="name" id="n2">Raghu Ram</p>
+                        
+                        <ul>
+                            <a><li><i class="fab fa-facebook" id="sc2a"></i></li></a>
+                            <a><li><i class="fab fa-linkedin" id="sc2b"></i></li></a>
+                            <a><li><i class="fab fa-github" id="sc2c"></i></li></a>
+                            <a><li><i class="fab fa-twitter-square" id="sc2d"></i></li></a>
+                        </ul>
+                        <p class="jntuno" id="j2">18341A05A5</p>
+                        <p class="mail" id="m2">18341A05A5@gmrit.edu.in</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 profile text-center">
+                <div class="ccontainer d-flex justify-content-center">
+                    <div class="imgbox" id="ibox3">
+                        <img src="{{ url_for('static',filename='Blogimage.png') }}" class="img-fluid" alt="Praneeth">
+                        <p class="name" id="n3">Manoj Reddy</p>
+                        
+                        <ul class="text-center">
+                            <a><li><i class="fab fa-facebook" id="sc3a"></i></li></a>
+                            <a><li><i class="fab fa-linkedin" id="sc3b"></i></li></a>
+                            <a><li><i class="fab fa-github" id="sc3c"></i></li></a>
+                            <a><li><i class="fab fa-twitter-square" id="sc3d"></i></li></a>
+                        </ul>
+                        <p class="jntuno" id="j3">19345A0508</p>
+                        <p class="mail" id="m3">19345A0508@gmrit.edu.in</p>     
+                    </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 profile text-center">
+                  <div class="container d-flex justify-content-center">
+                    <div class="imgbox" id="ibox4">
+                        <img src="{{ url_for('static',filename='Blogimage.png') }}" class="img-fluid" alt="Praneeth">
+                        <p class="name" id="n4">Jhansi Rani</p>
+                        
+                        <ul>
+                            <a><li><i class="fab fa-facebook" id="sc4a"></i></li></a>
+                            <a><li><i class="fab fa-linkedin" id="sc4b"></i></li></a>
+                            <a><li><i class="fab fa-github" id="sc4c"></i></li></a>
+                            <a><li><i class="fab fa-twitter-square" id="sc4d"></i></li></a>
+                        </ul>
+                        <p class="jntuno" id="j4">18341A0581</p>
+                        <p class="mail" id="m4">18341A0581@gmrit.edu.in</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+        
+        <!-- Footer -->
+<footer class="page-footer font-small">
+
+    <!-- Footer Elements -->
+    <div class="container-fluid">
+  
+      <!-- Grid row-->
+        <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col text-center pt-3">
+  
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="text-center-pinterest fa-lg white-text fa-2x"> </i>
+            </a>
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+  
+    </div>
+    <!-- Footer Elements -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center pt-3 pb-3">© 2021 Copyright:
+      <a href="#head" id="mlink"> COVI-AID.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="{{ url_for('static',filename='home.js') }}"></script>
+    </body>
+</html>
