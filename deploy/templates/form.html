@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='form.css') }}">
+    
+    </head>
+    
+    <body>
+
+        
+        <div class="container-fluid title text-center">
+            <p><span>Predict</span></p>
+            <p class="desc">Test your own Chest X-Ray image using our model</p>
+        </div>
+        <div class="container-fluid form-stat">
+            <div class="no" id="no1">1</div>
+            <div class="line" id="l1"></div>
+            <div class="no" id="no1">2</div>
+            <div class="line" id="l1"></div>
+            <div class="no" id="no1">3</div>
+            <div class="line" id="l1"></div>
+            <div class="no" id="no1">4</div>
+        </div>
+        <div class="container-fluid steps">
+            <div class="row pt-5">
+                <div class="col-lg-3 text-white cl1">
+                    Step 1: Click on the choose File button
+                </div>
+
+                <div class="col-lg-3 text-white cl2">
+                    Step 2: Select the Chest X-Ray image to be tested
+                </div>
+
+                <div class="col-lg-3 text-white cl3">
+                    Step 3: Click on the Predict button
+                </div>
+                <div class="col-lg-3 text-white cl4">
+                    Step 4: Scroll down to check your results
+                </div>
+            </div>
+        </div>
+
+        <!-- Chest X-Ray image upload from-->
+        <div class="container for">
+            <div class="box">
+                <form  id="upload-file" method="POST" enctype="multipart/form-data" action="/predict">
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload your chest X-Ray Image</label>
+                        <input type="file" id="file" name="file" required>
+                        <input type="submit" value="Predict">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        {% if clas %}
+        <div class="container-fluid results" id=res>
+            <p><span>Results</span></p>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 cl ml-5">
+                    <div class="container-fluid pre">
+                        Prediction: {{clas}}
+                    </div>
+                    <div class=" container-fluid per" >
+                        Confidence Percentage :
+                        <p id="prediction">{{prediction}}</p>
+                        <p id="pre" style="display: none;">{{pre}}</p>
+                        <div class="pie"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 cl2">
+                    <div class="rimg" id="mimg">
+                        <img src="{{ img_loc }}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <footer class="page-footer font-small">
+
+            <!-- Footer Elements -->
+            <div class="container-fluid">
+          
+              <!-- Grid row-->
+                <div class="row">
+          
+                <!-- Grid column -->
+                <div class="col text-center pt-3">
+          
+                    <!-- Facebook -->
+                    <a class="fb-ic">
+                      <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!-- Twitter -->
+                    <a class="tw-ic">
+                      <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!-- Google +-->
+                    <a class="gplus-ic">
+                      <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Linkedin -->
+                    <a class="li-ic">
+                      <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                      <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Pinterest-->
+                    <a class="pin-ic">
+                      <i class="text-center-pinterest fa-lg white-text fa-2x"> </i>
+                    </a>
+                </div>
+                <!-- Grid column -->
+          
+              </div>
+              <!-- Grid row-->
+          
+            </div>
+            <!-- Footer Elements -->
+          
+            <!-- Copyright -->
+            <div class="footer-copyright text-center pt-3 pb-3">© 2021 Copyright:
+              <a href="#head"> COVI-AID.com</a>
+            </div>
+            <!-- Copyright -->
+          
+          </footer>
+          <!-- Footer -->
+
+
+
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="{{ url_for('static',filename='form.js') }}"></script>
+    </body>
+</html>
